@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--Top level DayNight theme to be used in AndroidManifest.xml-->
+    <style name="Boilerplate.DayNight" parent="Base.Boilerplate" />
+
+    <style name="Boilerplate.DayNight.NoActionBar" parent="Base.Boilerplate">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--Base custom theme which will be shared between both light and dark theme variants-->
+    <style name="Base.Boilerplate" parent="Base.MaterialThemeBuilder">
+        <!--Material color attributes -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
+
+        <item name="android:colorBackground">@color/color_background</item>
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorError">@color/color_error</item>
+
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+        <item name="colorOnBackground">@color/color_on_background</item>
+        <item name="colorOnSurface">@color/color_on_surface</item>
+        <item name="colorOnError">@color/color_on_error</item>
+
+        <!--Material type attributes-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Boilerplate.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Boilerplate.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Boilerplate.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Boilerplate.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Boilerplate.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Boilerplate.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Boilerplate.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Boilerplate.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Boilerplate.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Boilerplate.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Boilerplate.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Boilerplate.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Boilerplate.Overline</item>
+
+        <!--Material shape attributes-->
+        <item name="shapeAppearanceSmallComponent">
+            @style/ShapeAppearance.Boilerplate.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">
+            @style/ShapeAppearance.Boilerplate.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">
+            @style/ShapeAppearance.Boilerplate.LargeComponent
+        </item>
+
+        <!--Component styles-->
+        <!--<item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert</item>-->
+        <item name="navigationViewStyle">@style/Widget.Boilerplate.NavigationView</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
+    </style>
+
+    <style name="Base.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:statusBarColor">?colorSurface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">?android:colorBackground</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
+            ?colorControlHighlight
+        </item>
+
+        <!--Remap legacy AppCompat attributes to MaterialComponent attributes-->
+        <item name="colorPrimaryDark">?colorPrimaryVariant</item>
+        <item name="colorAccent">?colorSecondary</item>
+    </style>
+</resources>
