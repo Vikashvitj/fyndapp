@@ -6,7 +6,7 @@
 
         <variable
             name="songDetailViewModel"
-            type="com.demoapp.encoraitunes.util.viewmodel.SongDetailViewModel" />
+            type="com.demoapp.fyndapp.util.viewmodel.MovieDetailViewModel" />
 
     </data>
 
@@ -21,73 +21,55 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivImageLarge"
-                imageUrl="@{songDetailViewModel.songItem.imageArt}"
+                imageUrl="@{songDetailViewModel.songItem.posterPath}"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
-                app:layout_constraintDimensionRatio="H, 1:1"
+                app:layout_constraintDimensionRatio="H, 1:1.2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_lock_lock" />
 
-            <View
-                android:id="@+id/viewCover"
-                android:layout_width="match_parent"
-                app:layout_constraintTop_toTopOf="@id/ivImageLarge"
-                android:background="#85595757"
-                app:layout_constraintBottom_toBottomOf="@id/ivImageLarge"
-                android:layout_height="0dp"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivButtonPlayPause"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/ivImageLarge"
-                android:src="@drawable/exo_controls_play"
-                android:tint="#334ED3"
-                app:layout_constraintBottom_toBottomOf="@id/ivImageLarge"
-                android:layout_width="100dp"
-                android:layout_height="100dp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSongTitle"
-                app:layout_constraintTop_toBottomOf="@id/ivImageLarge"
-                android:layout_margin="8dp"
-                android:textColor="#000000"
-                android:text='@{"Title: "+songDetailViewModel.songItem.title.label}'
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text='@{"Title: "+songDetailViewModel.songItem.originalTitle}'
+                android:textColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/ivImageLarge" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSongAlbum"
-                app:layout_constraintTop_toBottomOf="@id/tvSongTitle"
-                android:layout_margin="8dp"
-                android:text='@{"Collection: "+songDetailViewModel.songItem.imCollection.imName.label}'
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text='@{"Collection: "+songDetailViewModel.songItem.voteCount}'
+                app:layout_constraintTop_toBottomOf="@id/tvSongTitle" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSongArtists"
-                app:layout_constraintTop_toBottomOf="@id/tvSongAlbum"
-                android:layout_margin="8dp"
-                android:text='@{"Artist: "+songDetailViewModel.songItem.imArtist.label}'
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text='@{"Artist: "+songDetailViewModel.songItem.voteAverage}'
+                app:layout_constraintTop_toBottomOf="@id/tvSongAlbum" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSongCategory"
-                app:layout_constraintTop_toBottomOf="@id/tvSongArtists"
-                android:layout_margin="8dp"
-                android:text='@{"Category: "+songDetailViewModel.songItem.category.attributes.term}'
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text='@{"Category: "+songDetailViewModel.songItem.genreIds}'
+                app:layout_constraintTop_toBottomOf="@id/tvSongArtists" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSongReleaseDate"
-                app:layout_constraintTop_toBottomOf="@id/tvSongCategory"
-                android:layout_margin="8dp"
-                android:text='@{"Released On: "+songDetailViewModel.songItem.imReleaseDate.attributes.label}'
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text='@{"Released On: "+songDetailViewModel.songItem.releaseDate}'
+                app:layout_constraintTop_toBottomOf="@id/tvSongCategory" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

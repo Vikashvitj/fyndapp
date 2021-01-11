@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.demoapp.encoraitunes">
+    package="com.demoapp.fyndapp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".EncoraApp"
+        android:name="com.demoapp.fyndapp.TMDBApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,7 +15,7 @@
         android:theme="@style/Boilerplate.DayNight">
 
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.demoapp.fyndapp.ui.MainActivity"
             android:theme="@style/Boilerplate.DayNight">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.SongDetailActivity"
+            android:name="com.demoapp.fyndapp.ui.MovieDetailActivity"
             android:label="@string/title_activity_image_detail"
             android:theme="@style/Boilerplate.DayNight"
             android:windowSoftInputMode="stateHidden|adjustResize" />
